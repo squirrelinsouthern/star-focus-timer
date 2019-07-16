@@ -1,0 +1,73 @@
+/* 动画 */
+@keyframes spin {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}
+.spin{
+    animation: spin 10s infinite linear;
+}
+.pause {
+    animation: spin 10s infinite linear;
+    animation-play-state: paused;
+  }
+/* 计时 */
+.timeWapper{
+  /* border:1px solid yellow; */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:240rpx;
+}
+.time{
+  color:aliceblue;
+  font-size: 120rpx;
+  font-family:Courier New, Courier, monospace;
+  position: absolute;
+  z-index: 99;
+}
+.starWapper{
+    width: 400rpx;
+    height: 400rpx;
+}
+.starStyle{
+    width: 100%;
+    height: 100%;
+}
+
+/* 背景 */
+/* .container{
+  width: 100vh;
+  height:100vw;
+} */
+.imageStyle{
+  position: fixed;
+  z-index: -99;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+/* 按钮 */
+.buttonWapper{
+  position: fixed;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  bottom:200rpx;
+}
+.timerButton1{
+  margin-bottom: 16rpx;
+}
+.timerButton3{
+  position: fixed;
+  bottom:200rpx;
+}
+/* 文字 */
+.word{
+  color:aliceblue;
+  font-size: 40rpx;
+  position: fixed;
+  top:140rpx;
+}

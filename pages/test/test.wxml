@@ -1,0 +1,23 @@
+<!--pages/test/test.wxml-->
+<view>{{message}}</view>
+<button bindtap="reverseText">reverse text</button>
+
+<!-- wx:if -->
+<view wx:if="{{condition}}">红色</view>
+<view wx:else>绿色</view>
+<view class="{{ condition ? 'red': 'yellow' }}" style='height:100rpx'></view>
+<button bindtap="changeColor">change color</button>
+
+<!-- wx:for -->
+<view wx:for="{{arr}}" wx:for-item="xxx"  wx:for-index="index" wx:key="xxx.id">
+   id:{{xxx.id}} text:{{xxx.text}} index:{{index}}
+</view>
+<view wx:for="{{arr}}" wx:key="item.id">
+   id:{{item.id}} text:{{item.text}} key:{{item.id}}
+</view>
+
+<!-- 改变array -->
+<!-- 改变obj1 -->
+<view>{{obj.name}}的年龄是{{obj.age}}</view>
+<button bindtap="ageIncrease">+1</button>
+

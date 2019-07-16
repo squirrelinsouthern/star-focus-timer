@@ -1,0 +1,4 @@
+/* pages/test/test.wxss */
+.red{background-color:red;}
+.yellow{background-color:yellowgreen;}
+

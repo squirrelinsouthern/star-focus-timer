@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="word">{{hello}}</view>
+  <view class="timeWapper">
+    <view class="time">{{timer}}</view>
+    <view class="starWapper ">
+      <image src="../../images/star.png" class="starStyle {{spinStatus?'spin':'pause'}}" mode="aspectFill"></image>
+    </view>
+  </view>
+
+  <view class="buttonWapper" wx:if="{{!againView}}">
+    <t-button class="timerButton1" bindtap="stopTime" text="暂停计时" size="mini" color="transparent" wx:if="{{ timeStatus === 'start'}}"></t-button>
+    <t-button class="timerButton1" bindtap="countDown" text="继续计时" size="mini" color="transparent" wx:else></t-button>
+    <t-button class="timerButton2" size="mini" text="放 弃"></t-button>
+  </view>
+  <view class="buttonWapper"  wx:if="{{againView}}">
+    <t-button class="timerButton3" bindtap="againCount" text=" 开始新专注" size="mini" color="transparent" ></t-button>
+  </view>
+  
+  <image src="../../images/background.jpg" class="imageStyle" mode="aspectFill"></image>
+</view>

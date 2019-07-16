@@ -1,0 +1,5 @@
+<!--pages/timer/timer.wxml-->
+<view class="container">
+  <image src="../../images/time2.jpg" class="imageStyle" mode="aspectFill"></image>
+  <t-button class="timerButton" text="开始专注" color="transparent"></t-button>
+</view>

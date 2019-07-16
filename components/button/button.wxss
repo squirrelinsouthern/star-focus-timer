@@ -1,0 +1,26 @@
+button::after{
+  border: none;
+}
+.button-hover {
+  opacity: 0.8 !important;
+}
+
+.default-button{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:500rpx;
+  height: 96rpx;
+  border-radius: 54rpx;
+  color:aliceblue;
+  background-color: #02556D;
+  font-size:32rpx;
+}
+.default-button.mini{
+  width:340rpx;
+}
+.default-button.transparent{
+  background-color: transparent;
+  border:1rpx solid aliceblue;
+  color:aliceblue;
+}

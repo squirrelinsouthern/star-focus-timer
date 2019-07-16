@@ -1,0 +1,14 @@
+/* pages/timer/timer.wxss */
+
+.imageStyle{
+  position: fixed;
+  z-index: -99;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.timerButton{
+  position: absolute;
+  bottom:160rpx;
+}

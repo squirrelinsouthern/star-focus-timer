@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/todo/todo",
+    "components/confirm/confirm",
+    
+    "pages/focus/focus",
+    "pages/timer/timer",
+    "components/button/button",
+    "pages/index/index",
+    "pages/test/test",
+    "pages/logs/logs",
+    "pages/my/my"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "专注星球",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "orange",
+    "selectedColor": "red",
+    "backgroundColor": "yellow",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/timer/timer",
+        "text": "计时",
+        "iconPath": "images/timer.png",
+        "selectedIconPath": "images/timer-active.png"
+      },
+      {
+        "pagePath": "pages/todo/todo",
+        "text": "Todo",
+        "iconPath": "images/todo.png",
+        "selectedIconPath": "images/todo-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-active.png"
+      }
+
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

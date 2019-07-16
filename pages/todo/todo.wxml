@@ -1,0 +1,22 @@
+<view class="container">
+
+  <view class="todoWapper">
+    <scroll-view class="todoTable" scroll-y="true">
+      <view class="item" wx:for="{{contentList}}" wx:key="{{item.id}}">
+        <icon class="checkbox" bindtap="changeCheck" type="{{ item.finished ? 'success' : 'waiting' }}" size="20"/>
+        <text>{{item.text}}</text>
+        <icon type="cancel" size="20" color="gray" catchtap="removeTodo" />
+      </view>     
+    </scroll-view>
+
+    <view class="footer">
+        <text class="btn" bindtap="toggleAll">全部完成</text>
+        <text>项未完成</text>
+        <text class="btn" >清空所有已完成</text>
+    </view>
+  </view>
+
+  <t-button bindtap="new" class="todobutton" text="创建待办" color="transparent"></t-button>
+  <t-confirm class="confirm" placeholder="在此输入内容" visible="{{show}}" bindonconfirm="xxx" bindoncancel="zzz"></t-confirm>
+  <image src="../../images/background.jpg" class="imageStyle" mode="aspectFill"></image>
+</view>

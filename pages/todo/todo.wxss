@@ -1,0 +1,55 @@
+/* pages/todo/todo.wxss */
+.confirm{
+  
+}
+.todoWapper{
+  position: absolute;
+  top:80rpx;
+  height:60%;
+  width: 86%;
+}
+.todoWapper .todoTable{
+  height: 96%;
+}
+.todoWapper .item {
+  padding: 20rpx 8rpx;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  display: flex;
+  align-items: center;
+}
+.todoWapper .item .checkbox{
+  margin-right: 20rpx;
+}
+.todoWapper .item text{
+  flex: 1;
+  font-size: 36rpx;
+  color: white;
+}
+.todoWapper .item icon {
+  margin-left: 10rpx;
+}
+
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
+  padding: 0 10rpx;
+  font-size: 32rpx;
+  color:aqua;
+}
+
+/* 创建按钮*/
+.todobutton{
+  position: absolute;
+  bottom:120rpx;
+}
+/* 背景 */
+.imageStyle{
+  position: fixed;
+  z-index: -99;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}

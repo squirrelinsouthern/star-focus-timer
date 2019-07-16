@@ -1,0 +1,69 @@
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+.topWord{
+  color: white;
+  font-size:36rpx;
+  padding: 20rpx 0;
+}
+.confirm{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  padding: 0rpx 20rpx 0 20rpx;
+  background-color: #3A7587;
+  border-radius: 8rpx;
+  width: 640rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+textarea{
+  background-color: rgb(233, 233, 233);
+  height:200rpx;
+  width: 94%;
+  color: rgb(85, 85, 85);
+  font-size: 36rpx; 
+  padding: 20rpx 20rpx;
+}
+.actions{
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.actions{
+  /* border:1px solid red; */
+  margin: 32rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.actions .sure{
+  padding: 12rpx 0;
+  width: 280rpx;
+  background-color: #02556D;
+  border:1rpx solid #02556D;
+  border-radius: 8rpx;
+  color:white;
+  text-align: center;
+  vertical-align: middle;
+}
+.actions .cancel{
+  padding: 12rpx 0;
+  width: 280rpx;
+  border:1rpx solid white;
+  border-radius: 8rpx;
+  color:white;
+  text-align: center;
+}
+.actions > view.active{
+  opacity: 0.5;
+}
