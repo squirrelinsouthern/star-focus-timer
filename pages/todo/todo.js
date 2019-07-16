@@ -10,7 +10,8 @@ Page({
       { id: 1, text: "完成一本书", finished: true },
       { id: 2, text: "买鸡蛋、面包、牛奶买鸡蛋、牛奶买鸡蛋、面包、牛奶", finished: true },
       { id: 3, text: "开发票", finished: true }
-    ]
+    ],
+    index:""
   },
   new(){
     this.setData({ show: true })
@@ -27,11 +28,19 @@ Page({
   zzz() {
     this.setData({show:false})
   },
-  removeTodo(){
-    
+
+  changeCheck(event){
+    let index = event.currentTarget.dataset.index
+    // console.log(index)
+    this.data.contentList[index].finished = !this.data.contentList[index].finished
+    this.setData({ contentList: this.data.contentList})
   },
-  changeCheck(){
   
-  }
+  removeTodo(e) {
+    let indexdel = e.currentTarget.dataset.indexdel
+    console.log(indexdel)
+    let newDelList = this.data.contentList.splice(indexdel,1)
+    this.setData({ contentList: this.data.contentList})
+  },
   
 })

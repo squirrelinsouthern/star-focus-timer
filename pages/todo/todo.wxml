@@ -2,17 +2,16 @@
 
   <view class="todoWapper">
     <scroll-view class="todoTable" scroll-y="true">
-      <view class="item" wx:for="{{contentList}}" wx:key="{{item.id}}">
-        <icon class="checkbox" bindtap="changeCheck" type="{{ item.finished ? 'success' : 'waiting' }}" size="20"/>
+      <view class="item" wx:for="{{contentList}}" wx:for-index="index" wx:key="{{item.id}}" data-index="{{index}}" catchtap="changeCheck" >
+        <icon class="checkbox" type="{{ item.finished ? 'success' : 'waiting' }}" size="20"/>
         <text>{{item.text}}</text>
-        <icon type="cancel" size="20" color="gray" catchtap="removeTodo" />
+        <icon type="cancel" size="20" color="gray" data-indexdel="{{index}}"  catchtap="removeTodo" />
       </view>     
     </scroll-view>
 
     <view class="footer">
-        <text class="btn" bindtap="toggleAll">全部完成</text>
         <text>项未完成</text>
-        <text class="btn" >清空所有已完成</text>
+        <text>清空全部</text>
     </view>
   </view>
 
