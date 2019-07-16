@@ -2,7 +2,7 @@
 Page({
   data: {
     hello:"计时中",
-    totalSecond: 2,
+    totalSecond: 1500,
     formatTime: "",
     timer: null,
     timeStatus: "stop",
@@ -36,7 +36,7 @@ Page({
   },
   againCount(){
     // this.setData({ totalSecond: 1500 })
-    this.data.totalSecond = 3
+    this.data.totalSecond = 1500
     this.setData({ againView: false })
     this.countDown()
   },
@@ -53,6 +53,11 @@ Page({
       m = "0" + m
     }
     this.setData({ timer: `${m}:${s}`}) 
+  },
+  abandonTime(){
+    wx.navigateBack({
+      to: -1,
+    })
   }
 
 

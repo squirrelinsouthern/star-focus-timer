@@ -1,66 +1,27 @@
-// pages/my/my.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    choose:"history",
+    lists:{
+      "本周四":[
+        { time: "14:00", text: "规范化发过fdg", id: 3 },
+        { time: "15:00", text: "公司发的fdg", id: 1 }
+      ],
+      "本周五": [
+        { time: "11:00", text: "多个地方是个梵蒂冈d多个地方是个梵蒂地方是个梵蒂冈", id: 4 },
+        { time: "14:00", text: "斧反倒是规范化就和你", id: 1 },
+        { time: "14:00", text: "斧反倒是规范化就和你", id: 1 },
+        { time: "14:00", text: "斧反倒是规范化就和你", id: 1 }
+      ],
+      "本周日": [
+        { time: "04:00", text: "多擦个梵蒂冈", id: 4 },
+        { time: "14:00", text: "斧反的广泛地你g", id: 1 }
+      ]
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  changeButton(e){
+   console.log(e.currentTarget.dataset.name)
+    this.setData({ choose: e.currentTarget.dataset.name})
   }
+
+
 })

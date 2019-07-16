@@ -10,7 +10,7 @@
   <view class="buttonWapper" wx:if="{{!againView}}">
     <t-button class="timerButton1" bindtap="stopTime" text="暂停计时" size="mini" color="transparent" wx:if="{{ timeStatus === 'start'}}"></t-button>
     <t-button class="timerButton1" bindtap="countDown" text="继续计时" size="mini" color="transparent" wx:else></t-button>
-    <t-button class="timerButton2" size="mini" text="放 弃"></t-button>
+    <t-button class="timerButton2" size="mini" text="放 弃" bindtap="abandonTime"></t-button>
   </view>
   <view class="buttonWapper"  wx:if="{{againView}}">
     <t-button class="timerButton3" bindtap="againCount" text=" 开始新专注" size="mini" color="transparent" ></t-button>

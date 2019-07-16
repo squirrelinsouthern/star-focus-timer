@@ -10,7 +10,7 @@
     </scroll-view>
 
     <view class="footer">
-        <text>项未完成</text>
+        <text wx:if="{{ leftCount }}">{{ leftCount }}项未完成</text>
         <text>清空全部</text>
     </view>
   </view>

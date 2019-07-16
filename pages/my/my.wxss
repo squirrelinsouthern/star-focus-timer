@@ -1,1 +1,91 @@
-/* pages/my/my.wxss */
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.personal{
+  height: 170rpx;
+  width: 100%;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top:0;
+}
+.avatar{
+  border-radius: 50%;
+  overflow: hidden;
+  width:120rpx;
+  height:120rpx;
+  margin: 0 40rpx;
+}
+.name{
+  font-size:36rpx;
+  flex:1;
+}
+.question{
+  display: flex;
+  align-items: center;
+  margin-right: 16rpx;
+}
+.question icon{
+  position: relative;
+  right: -16rpx;
+}
+.bb{
+  background-color: transparent;
+  color:salmon;
+  /* border: 1px solid red; */
+  font-size: 32rpx;
+}
+.bb::after{
+  border: none;
+}
+
+
+/* tabs */
+.tabs{
+  height: 80rpx;
+  width: 100%;
+  background-color: yellowgreen;
+  position: absolute;
+  top:188rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.active{
+  color: white;
+}
+
+/* scroll */
+.scroll{
+  width: 92%;
+  border:2px solid saddlebrown;
+  height: 112%;
+  margin-top: 80rpx;
+}
+.scroll .item{
+  background-color: skyblue;
+  border-radius: 8rpx;
+  margin-bottom: 16rpx;
+  padding: 16rpx 36rpx;
+}
+.index{
+  font-size:40rpx;
+  font-weight: 600;
+}
+.list{
+  display: flex;
+  margin: 12rpx 0;
+  font-size: 36rpx;
+}
+.time{
+  margin-right: 32rpx;
+  margin-bottom: 12rpx;
+  font-size: 36rpx;
+}
+details{
+  flex-wrap: wrap;
+  flex: 1;
+}

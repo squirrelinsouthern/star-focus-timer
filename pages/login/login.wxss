@@ -1,0 +1,16 @@
+/* pages/login/login.wxss */
+.avatar{
+  border: 8px solid salmon;
+  border-radius: 50%;
+  overflow: hidden;
+  width:244rpx;
+  height:244rpx;
+}
+.name{
+  margin-top:56rpx; 
+  font-size: 36rpx;
+}
+button{
+  margin-top:80rpx; 
+  width: 360rpx;
+}

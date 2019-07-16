@@ -1,15 +1,15 @@
 {
   "pages": [
-    "pages/todo/todo",
-    "components/confirm/confirm",
-    
-    "pages/focus/focus",
-    "pages/timer/timer",
-    "components/button/button",
-    "pages/index/index",
-    "pages/test/test",
+    "pages/my/my",
+    "pages/login/login",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/timer/timer",
+    "components/confirm/confirm",
+    "pages/todo/todo",
+    "pages/focus/focus",
+    "components/button/button",
+    "pages/test/test"
+   
    
   ],
   "window": {

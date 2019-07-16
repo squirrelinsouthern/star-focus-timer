@@ -11,7 +11,8 @@ Page({
       { id: 2, text: "买鸡蛋、面包、牛奶买鸡蛋、牛奶买鸡蛋、面包、牛奶", finished: true },
       { id: 3, text: "开发票", finished: true }
     ],
-    index:""
+    index:"",
+    leftCount:1
   },
   new(){
     this.setData({ show: true })
