@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/my/my",
     "pages/login/login",
+    "pages/my/my",
     "pages/logs/logs",
     "pages/timer/timer",
     "components/confirm/confirm",
