@@ -9,8 +9,6 @@
     "pages/focus/focus",
     "components/button/button",
     "pages/test/test"
-   
-   
   ],
   "window": {
     "backgroundTextStyle": "light",
