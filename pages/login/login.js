@@ -16,8 +16,8 @@ Page({
     let iv = event.detail.iv
     let code
     wx.login({
-      success:(response) => {
-        code = response.code
+      success:(res) => {
+        code = res.code
         http.post('/sign_in/mini_program_user', {
           code,
           iv,
@@ -25,11 +25,14 @@ Page({
           app_id,
           app_secret,
         })
-        // console.log(response.response.data)
-        // .then(response => {
-          
-        //     wx.setStorageSync('me',response.data.resource)
-        // })
+        .then(res => {
+            console.log(res)
+            wx.setStorageSync('me',res.response.data.resource)
+            wx.setStorageSync('X-token', res.response.header['X-token'])
+            wx.reLaunch({
+              url: '/pages/timer/timer',
+            })
+        })
       }
     })
   }

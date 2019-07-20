@@ -1,14 +1,22 @@
 {
   "pages": [
-    "pages/login/login",
+     
+    "pages/todo/todo",
+      "pages/login/login",
+    "pages/testList/testList",
+      "pages/test/test",
+        "pages/timer/timer",
+    "pages/focus/focus",
+  
+   
     "pages/my/my",
     "pages/logs/logs",
-    "pages/timer/timer",
+
     "components/confirm/confirm",
-    "pages/todo/todo",
-    "pages/focus/focus",
-    "components/button/button",
-    "pages/test/test"
+    
+    
+    "components/button/button"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +48,6 @@
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my-active.png"
       }
-
     ]
   },
   "sitemapLocation": "sitemap.json"

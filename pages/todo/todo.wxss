@@ -2,10 +2,20 @@
 .confirm{
   
 }
+.top{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top:100rpx;
+  font-size: 48rpx;
+  color:aqua;
+}
+
+/* todoList */
 .todoWapper{
   position: absolute;
-  top:80rpx;
-  height:60%;
+  top:200rpx;
+  height:50%;
   width: 86%;
 }
 .todoWapper .todoTable{
@@ -21,23 +31,55 @@
   margin-right: 20rpx;
 }
 .todoWapper .item text{
-  flex: 1;
+  width: 82%;
   font-size: 36rpx;
   color: white;
+  text-align: justify;
 }
-.todoWapper .item icon {
-  margin: 10rpx;
+.iconDelete{
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
 }
+.yes{ visibility:visible; }
+.no{ visibility:hidden;}
+.active-tag{ 
+  background-color:rgba(128, 128, 128, 0.3);
+  }
 
 
-.footer{
+
+
+/* .footer{
   display: flex;
   justify-content: space-between;
   margin: 30rpx 0;
   padding: 0 10rpx;
   font-size: 32rpx;
   color:aqua;
+} */
+/* 鼓励的话 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.empty .title {
+  font-size: 48rpx;
+  margin: 200rpx 50rpx 50rpx;
+  color: rgb(255, 255, 255);
+  letter-spacing:4rpx;
+}
+
+.empty .content {
+  font-size: 36rpx;
+  color: #DDD;
+  text-align: center;
+  letter-spacing:4rpx;
+}
+
 
 /* 创建按钮*/
 .todobutton{
@@ -53,3 +95,4 @@
   width: 100%;
   height: 100%;
 }
+

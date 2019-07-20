@@ -1,0 +1,14 @@
+<view>
+  <view class='appointent-date'>
+
+    <view class="appointent-date-div {{state==index?'active-tag':''}}"
+          bindtap="select_date"
+          wx:for="{{dates}}" data-key='{{index}}'>
+      <view class="flex-item">
+        <rich-text class='data_name'>{{item.data_name}}</rich-text>
+        <rich-text>{{item.name}}</rich-text>
+      </view>
+    </view>
+    
+  </view>
+</view>

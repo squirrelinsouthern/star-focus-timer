@@ -1,47 +1,81 @@
+const { http } = require('../../lib/http.js')
+
 Page({
   data: {
     show:false,
-    contentList:[
-      { id: 1, text: "完成一本书", finished: true },
-      { id: 2, text: "买鸡蛋、面包、牛奶买鸡蛋、面包、牛奶买鸡蛋、牛奶", finished: true },
-      { id: 3, text: "开发票", finished: false },
-      { id: 4, text: "买尿布", finished: false },
-      { id: 5, text: "写代码", finished: true },
-      { id: 1, text: "完成一本书", finished: true },
-      { id: 2, text: "买鸡蛋、面包、牛奶买鸡蛋、牛奶买鸡蛋、面包、牛奶", finished: true },
-      { id: 3, text: "开发票", finished: true }
-    ],
+    contentList:[],
     index:"",
-    leftCount:1
+    turnOut:true,
+    state: ''
   },
-  new(){
+
+
+  // 创建待办  
+  createNew(){
     this.setData({ show: true })
   },
 
-  xxx(event) {
-    let newTodo = { id: this.data.contentList.length + 1, text: event.detail, finished:false }
-    if(newTodo){
-      this.data.contentList = this.data.contentList.concat(newTodo)
-      this.setData({ contentList: this.data.contentList})
-    }
-    this.setData({ show: false })
+  onShow(e){
+    http.get('/todos?completed=false').then((res)=>{
+      console.log(res.response.data.resources)
+      this.setData({ contentList: res.response.data.resources})
+    })
+    // http.get('/todos').then((res) => {
+    //   console.log(res.response.data.resources)
+    //   this.setData({ contentList: res.response.data.resources })
+    // })
   },
-  zzz() {
+  
+  // 确定按钮 接口params: { description: "" }
+  xxxConfirm(event) {
+    let content = event.detail
+    if (content) {  //最后在外层判断
+      http.post('/todos', {
+        description: content
+      })
+      .then((res) => {
+        // console.log(res)
+        let saveContent = {
+          id: res.response.data.resource.id,
+          description: res.response.data.resource.description,
+          completed: res.response.data.resource.completed
+        }
+        this.data.contentList = this.data.contentList.concat(saveContent)
+        this.setData({ contentList: this.data.contentList })
+        this.setData({ show: false })
+      })
+    }
+  },
+
+  zzzCancel() {
     this.setData({show:false})
   },
 
-  changeCheck(event){
-    let index = event.currentTarget.dataset.index
-    // console.log(index)
-    this.data.contentList[index].finished = !this.data.contentList[index].finished
-    this.setData({ contentList: this.data.contentList})
+
+  // 隐藏一个列表
+  hideTodo(e) {
+    let current = e.currentTarget.dataset.index //0
+    let id = e.currentTarget.dataset.id         //4201 
+    http.put(`/todos/${id}`, { completed: true })
+      .then((res) => {
+        // console.log(res)
+        let statusTodo = res.response.data.resource
+        this.data.contentList[current] = statusTodo
+        this.setData({ contentList: this.data.contentList })
+      })    
+    // this.data.contentList[current].completed = true
+    // let newDelList = this.data.contentList.splice(current,1)
+    // this.setData({ contentList: this.data.contentList})
   },
-  
-  removeTodo(e) {
-    let indexdel = e.currentTarget.dataset.indexdel
-    console.log(indexdel)
-    let newDelList = this.data.contentList.splice(indexdel,1)
-    this.setData({ contentList: this.data.contentList})
-  },
+
+
+  // class="item {{state===index?'active-tag':''}">
+  aaa(e){
+    let state = e.currentTarget.dataset.xxx
+    console.log(e.currentTarget)
+    this.setData({
+      state: e.currentTarget.dataset.key
+      })
+  }
   
 })

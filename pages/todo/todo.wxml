@@ -1,21 +1,51 @@
 <view class="container">
+  <!-- todos -->
 
-  <view class="todoWapper">
-    <scroll-view class="todoTable" scroll-y="true">
-      <view class="item" wx:for="{{contentList}}" wx:for-index="index" wx:key="{{item.id}}" data-index="{{index}}" catchtap="changeCheck" >
-        <icon class="checkbox" type="{{ item.finished ? 'success' : 'waiting' }}" size="20"/>
-        <text>{{item.text}}</text>
-        <icon type="cancel" size="20" color="gray" data-indexdel="{{index}}"  catchtap="removeTodo" />
-      </view>     
-    </scroll-view>
+  <block wx:if="{{ contentList.length }}">
+    <text class="top">待办列表*</text>
+    <view class="todoWapper">
+      <!-- scroll-view  -->
+      <scroll-view class="todoTable" scroll-y="true">
+        <view wx:for="{{contentList}}" wx:key="{{item.id}}" wx:if="{{!item.completed}}"
+              data-key="{{index}}" class="item {{state==index ? 'active-tag' : '' }}"
+              bindtap="aaa">
+              
+          <icon class="checkbox" 
+                type="waiting" size="20" 
+                data-index="{{index}}" data-id="{{item.id}}"/>
+          <text 
+                data-index="{{index}}" data-id="{{item.id}}">{{item.description}}</text>
+          <view catchtap="hideTodo" class="iconDelete"
+                data-index="{{index}}" data-id="{{item.id}}">
+            <icon type="cancel" size="20" color='gray'
+            data-key="{{index}}" class="{{state==index ? 'yes' : 'no' }}"/>
+          </view>
+      
+        </view>     
+      </scroll-view>
 
-    <view class="footer">
-        <text wx:if="{{ leftCount }}">{{ leftCount }}项未完成</text>
-        <text>清空全部</text>
+      <!-- footer -->
+      <!-- <view class="footer">
+        <text>待办列表</text>
+        <text>全部列表</text>
+    </view> -->
     </view>
-  </view>
+   </block>
+  
+  <block wx:else>
+    <view class="empty">
+      <text class="title">快来列出你的TODO吧</text>
+      <text class="content">“今天也要加油哦！”</text>
+    </view>
+  </block>
+  <!-- 创建按钮 -->
+  <t-button bindtap="createNew" class="todobutton" text="创建待办" color="transparent"></t-button>
 
-  <t-button bindtap="new" class="todobutton" text="创建待办" color="transparent"></t-button>
-  <t-confirm class="confirm" placeholder="在此输入内容" visible="{{show}}" bindonconfirm="xxx" bindoncancel="zzz"></t-confirm>
+  <!-- 弹框 -->
+  <t-confirm class="confirm" placeholder="在此输入内容" visible="{{show}}" bindonconfirm="xxxConfirm" bindoncancel="zzzCancel"></t-confirm>
+
+  <!-- 背景 -->
   <image src="../../images/background.jpg" class="imageStyle" mode="aspectFill"></image>
 </view>
+
+<!--  -->
