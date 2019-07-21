@@ -37,12 +37,14 @@
   text-align: justify;
 }
 .iconDelete{
+  /* border:1px solid yellow; */
+  width: 40rpx;
   margin-left: 20rpx;
   display: flex;
   align-items: center;
 }
-.yes{ visibility:visible; }
-.no{ visibility:hidden;}
+.yes{  display:block; }
+.no{ display:none; }
 .active-tag{ 
   background-color:rgba(128, 128, 128, 0.3);
   }

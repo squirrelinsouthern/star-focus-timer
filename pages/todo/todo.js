@@ -6,27 +6,26 @@ Page({
     contentList:[],
     index:"",
     turnOut:true,
-    state: ''
+    state: '',
+    showModify: false,
+    updateContent: "",
+    updateId: '',
+    updateIndex: '',
   },
 
-
-  // 创建待办  
-  createNew(){
-    this.setData({ show: true })
-  },
-
+// 初始渲染
   onShow(e){
     http.get('/todos?completed=false').then((res)=>{
       console.log(res.response.data.resources)
       this.setData({ contentList: res.response.data.resources})
     })
-    // http.get('/todos').then((res) => {
-    //   console.log(res.response.data.resources)
-    //   this.setData({ contentList: res.response.data.resources })
-    // })
   },
   
-  // 确定按钮 接口params: { description: "" }
+// 创建待办 3操作
+  createNew() {
+    this.setData({ show: true })
+  }, 
+
   xxxConfirm(event) {
     let content = event.detail
     if (content) {  //最后在外层判断
@@ -35,12 +34,8 @@ Page({
       })
       .then((res) => {
         // console.log(res)
-        let saveContent = {
-          id: res.response.data.resource.id,
-          description: res.response.data.resource.description,
-          completed: res.response.data.resource.completed
-        }
-        this.data.contentList = this.data.contentList.concat(saveContent)
+        let saveContent = [res.response.data.resource]
+        this.data.contentList = saveContent.concat(this.data.contentList)
         this.setData({ contentList: this.data.contentList })
         this.setData({ show: false })
       })
@@ -52,7 +47,7 @@ Page({
   },
 
 
-  // 隐藏一个列表
+// 隐藏一行列表
   hideTodo(e) {
     let current = e.currentTarget.dataset.index //0
     let id = e.currentTarget.dataset.id         //4201 
@@ -68,14 +63,43 @@ Page({
     // this.setData({ contentList: this.data.contentList})
   },
 
-
-  // class="item {{state===index?'active-tag':''}">
-  aaa(e){
-    let state = e.currentTarget.dataset.xxx
-    console.log(e.currentTarget)
+// 给列表添加样式
+  addStyle(e){
     this.setData({
       state: e.currentTarget.dataset.key
+    })
+  },
+
+
+// 修改文字内容 3操作
+  modifyAgain(e){
+    let { content, id, index } = e.currentTarget.dataset
+    this.updateId = id
+    this.updatIndex = index
+    this.setData({ showModify: true, updateContent: content })
+  },
+
+  againConfirm(event){
+    console.log(event)
+    let content = event.detail  //吃什么
+    if (content){
+      http.put(`/todos/${this.updateId}`, {
+        completed: false,
+        description: content
+    })
+      .then((res) => {
+        console.log(res)
+        let newObj = res.response.data.resource
+        this.data.contentList[this.updatIndex] = newObj
+        this.setData({ contentList: this.data.contentList })
+        this.setData({ showModify: false })
       })
+    }
+    
+  },
+
+  againCancel(){
+    this.setData({ showModify: false })
   }
   
 })

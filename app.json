@@ -1,22 +1,15 @@
 {
   "pages": [
-     
-    "pages/todo/todo",
-      "pages/login/login",
-    "pages/testList/testList",
-      "pages/test/test",
-        "pages/timer/timer",
-    "pages/focus/focus",
-  
-   
     "pages/my/my",
+    "pages/focus/focus",
+    "pages/todo/todo",
+    "pages/login/login",
+    "pages/testList/testList",
+    "pages/test/test",
+    "pages/timer/timer",
     "pages/logs/logs",
-
     "components/confirm/confirm",
-    
-    
     "components/button/button"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
