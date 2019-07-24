@@ -2,7 +2,7 @@
 Page({
   data: {
     hello:"计时中",
-    totalSecond: 5,
+    totalSecond: 1500,
     formatTime: "",
     timer: null,
     timeStatus: "stop",
