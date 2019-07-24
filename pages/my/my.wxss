@@ -2,11 +2,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #34243E;
 }
 .personal{
   height: 170rpx;
   width: 100%;
-  background-color: yellow;
+  border-bottom: 1px solid white;
+  /* background-color: white; */
   display: flex;
   align-items: center;
   position: absolute;
@@ -18,10 +20,12 @@
   width:120rpx;
   height:120rpx;
   margin: 0 40rpx;
+ 
 }
 .name{
   font-size:36rpx;
   flex:1;
+  color:white;
 }
 .question{
   display: flex;
@@ -46,8 +50,8 @@
 /* tabs */
 .tabs{
   height: 80rpx;
-  width: 100%;
-  background-color: yellowgreen;
+  width: 92%;
+  color:gray;
   position: absolute;
   top:188rpx;
   display: flex;
@@ -55,17 +59,20 @@
   align-items: center;
 }
 .active{
-  color: white;
+  color: rgb(255, 187, 0);
+  font-weight: 600;
+  font-size:36rpx;
 }
 
 /* scroll */
 .scroll{
   width: 92%;
+  border:2px solid #34243E;
   height: 112%;
   margin-top: 80rpx;
 }
 .scroll .item{
-  background-color: skyblue;
+  background-color: white;
   border-radius: 8rpx;
   margin-bottom: 16rpx;
   padding: 16rpx 36rpx;
@@ -73,18 +80,21 @@
 .index{
   font-size:40rpx;
   font-weight: 600;
+  color: #34243E;
 }
 .list{
   display: flex;
   margin: 12rpx 0;
   font-size: 36rpx;
+  color: #34243E;
 }
 .time{
   margin-right: 32rpx;
   margin-bottom: 12rpx;
   font-size: 36rpx;
+  color: #34243E;
 }
-.detail{
+detail{
   flex-wrap: wrap;
   flex: 1;
   text-align: justify;

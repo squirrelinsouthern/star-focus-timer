@@ -1,6 +1,8 @@
 const { http } = require('../../lib/http.js')
+const { formatTimeSimple } = require('../../lib/util-simple.js')
 
 Page({
+  today: null,
   data: {
     show:false,
     contentList:[],
@@ -11,6 +13,9 @@ Page({
     updateContent: "",
     updateId: '',
     updateIndex: '',
+    bh: "",
+
+
   },
 
 // 初始渲染
@@ -19,6 +24,11 @@ Page({
       console.log(res.response.data.resources)
       this.setData({ contentList: res.response.data.resources})
     })
+    var today = formatTimeSimple (new Date())
+    this.setData({
+      today: today
+    })
+    this.helloHi()
   },
   
 // 创建待办 3操作
@@ -100,6 +110,67 @@ Page({
 
   againCancel(){
     this.setData({ showModify: false })
-  }
+  },
   
+
+
+helloHi(options) {
+  var that = this;
+  var timestamp = Date.parse(new Date());
+  timestamp = timestamp / 1000;
+  // console.log("当前时间戳为：" + timestamp);
+  //获取当前时间
+  var n = timestamp * 1000;
+  var date = new Date(n);
+  //获取时
+  var h = date.getHours();
+  console.log("现在的时间是" + h + "点")
+
+  if (0 < h && h <= 6) {
+    that.setData({
+      bh: '晚上好!'
+    })
+  } else if (6 <= h && h < 8) {
+    that.setData({
+      bh: '早上好!'
+    })
+  } 
+  else if (8 <= h && h <= 11) {
+    that.setData({
+      bh: '上午好!'
+    })
+  }else if (11 <= h && h <= 14) {
+    that.setData({
+      bh: '中午好！'
+    })
+  } else if (14 <= h && h <= 16) {
+    that.setData({
+      bh: '下午好!'
+    })
+  }
+  else if (16 <= h && h <= 24) {
+    that.setData({
+      bh: '晚上好!'
+    })
+  }
+  else {
+    that.setData({
+      bh: '晚上好!'
+    })
+  }
+},
+
+
+
+
+
+
+
+
 })
+
+
+
+
+
+

@@ -9,7 +9,7 @@ Page({
 
    onShow(){
      this.fetchHistory()
-     this.fetchTomato()
+    //  this.fetchTomato()
    },
 
   fetchHistory(event){
@@ -18,12 +18,12 @@ Page({
        this.setData({ history: res.response.data.resources })
      })
    },
-  fetchTomato(event) {
-    http.get('/tomatoes', { is_group: "yes" }).then((res) => {
-      console.log(res)
-      this.setData({ tomatoe: res.response.data.resources })
-    })
-  },
+  // fetchTomato(event) {
+  //   http.get('/tomatoes', { is_group: "yes" }).then((res) => {
+  //     console.log(res)
+  //     this.setData({ tomatoe: res.response.data.resources })
+  //   })
+  // },
 
 
 

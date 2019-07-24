@@ -9,11 +9,11 @@ button::after{
   display:flex;
   align-items: center;
   justify-content: center;
-  width:500rpx;
+  width:360rpx;
   height: 96rpx;
   border-radius: 54rpx;
-  color:aliceblue;
-  background-color: #02556D;
+  color:#34243E;
+  background-color: white;
   font-size:32rpx;
 }
 .default-button.mini{
@@ -21,6 +21,6 @@ button::after{
 }
 .default-button.transparent{
   background-color: transparent;
-  border:1rpx solid aliceblue;
-  color:aliceblue;
+  border:1rpx solid white;
+  color:white;
 }

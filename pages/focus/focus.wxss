@@ -1,3 +1,10 @@
+.container{
+  height:100vh;
+  background-color: #34243E;
+  display: flex;
+  flex-direction: column;
+}
+
 /* 动画 */
 @keyframes spin {
     0% {transform: rotate(0);}
@@ -27,8 +34,8 @@
   z-index: 99;
 }
 .starWapper{
-    width: 400rpx;
-    height: 400rpx;
+    width: 540rpx;
+    height: 540rpx;
 }
 .starStyle{
     width: 100%;
@@ -55,7 +62,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  bottom:200rpx;
+  bottom:160rpx;
 }
 .timerButton1{
   margin-bottom: 16rpx;
@@ -67,7 +74,8 @@
 /* 文字 */
 .word{
   color:aliceblue;
-  font-size: 40rpx;
+  font-size: 48rpx;
+  font-weight: 800;
   position: fixed;
-  top:140rpx;
+  top:120rpx;
 }

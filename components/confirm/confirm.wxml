@@ -7,4 +7,5 @@
       <view hover-class='active' class="sure" bindtap='confirm'>确 定</view>   
     </view>
   </view>
+  <view class="bgc"></view>
 </view>

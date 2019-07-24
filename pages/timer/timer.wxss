@@ -1,6 +1,21 @@
 /* pages/timer/timer.wxss */
 
 .imageStyle{
+  margin-top: -80rpx;
+  margin-bottom: 40rpx;
+}
+.timerButton{
+  border: 1rpx solid #34243E;
+  color: #34243E;
+  border-radius: 50rpx; 
+  width: 360rpx;
+  height: 100rpx;
+  background-color: transparent;
+  display: flex;
+  justify-content : center;
+  align-items: center;
+}
+.bgcStyle{
   position: fixed;
   z-index: -99;
   left: 0px;
@@ -8,7 +23,5 @@
   width: 100%;
   height: 100%;
 }
-.timerButton{
-  position: absolute;
-  bottom:160rpx;
-}
+
+

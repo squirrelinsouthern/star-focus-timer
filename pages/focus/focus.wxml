@@ -4,7 +4,7 @@
   <view class="timeWapper">
     <view class="time">{{timer}}</view>
     <view class="starWapper ">
-      <image src="../../images/star.png" class="starStyle {{spinStatus?'spin':'pause'}}" mode="aspectFill"></image>
+      <image src="../../images/socket.png" class="starStyle {{spinStatus?'spin':'pause'}}" mode="aspectFill"></image>
     </view>
   </view>
  
@@ -17,6 +17,6 @@
   <view class="buttonWapper"  wx:if="{{againView}}">
     <t-button class="timerButton3" bindtap="againCount" text=" 开始新专注" size="mini" color="transparent" ></t-button>
   </view>
-  
-  <image src="../../images/background.jpg" class="imageStyle" mode="aspectFill"></image>
+ 
 </view>
+ 

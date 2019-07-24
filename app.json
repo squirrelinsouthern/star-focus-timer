@@ -1,26 +1,21 @@
 {
   "pages": [
-    "pages/my/my",
-    "pages/focus/focus",
-    "pages/todo/todo",
     "pages/login/login",
-    "pages/testList/testList",
-    "pages/test/test",
+    "pages/my/my",
+    "pages/todo/todo",
     "pages/timer/timer",
-    "pages/logs/logs",
-    "components/confirm/confirm",
-    "components/button/button"
+    "pages/focus/focus"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#34243E",
     "navigationBarTitleText": "专注星球",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "orange",
-    "selectedColor": "red",
-    "backgroundColor": "yellow",
+    "color": "#9B9B9B",
+    "selectedColor": "#FFAC2C",
+    "backgroundColor": "#34243E",
     "borderStyle": "black",
     "list": [
       {

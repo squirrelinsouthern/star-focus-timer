@@ -1,2 +1,3 @@
-<!--components/t-button/t-button.wxml-->
-<button class="default-button {{color === 'transparent' && 'transparent'}} {{size === 'mini' && 'mini'}}" hover-class="button-hover">{{text}}</button>
+
+<button class="default-button {{color === 'transparent' && 'transparent'}} {{size === 'mini' && 'mini'}}" 
+        hover-class="button-hover">{{text}}</button>

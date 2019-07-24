@@ -1,16 +1,53 @@
 /* pages/login/login.wxss */
+.container{
+  background-color: #34243E;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .avatar{
-  border: 8px solid salmon;
+  /* border: 8px solid salmon; */
   border-radius: 50%;
   overflow: hidden;
-  width:244rpx;
-  height:244rpx;
+  width:132rpx;
+  height:132rpx;
+  position: relative;
+  top:116rpx;
+}
+.astronaut{
+  position: absolute;
+  top:148rpx;
 }
 .name{
-  margin-top:56rpx; 
-  font-size: 36rpx;
+  color:azure;
+  position: relative;
+  top:80rpx; 
+  font-size: 42rpx;
+  font-weight: 800;
+  letter-spacing:2rpx;
 }
 button{
-  margin-top:80rpx; 
+  border: 1rpx solid white;
+  color: white;
+  border-radius: 50rpx; 
   width: 360rpx;
+  height: 100rpx;
+  background-color: transparent;
+  display: flex;
+  justify-content : center;
+  align-items: center;
+}
+button::after{
+  border: none;
+}
+.button-hover {
+  opacity: 0.8 !important;
+}
+
+
+.logo{
+  position: absolute;
+  bottom: 80rpx;
+  height:60rpx;
+  width: 300rpx
 }

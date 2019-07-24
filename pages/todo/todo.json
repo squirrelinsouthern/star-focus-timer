@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "t-confirm": "../../components/confirm/confirm",
-    "t-button": "../../components/button/button"
+    "t-button": "../../components/button/button",
+    "t-round": "../../components/round/round"
   }
 }  
