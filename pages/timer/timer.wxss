@@ -24,4 +24,7 @@
   height: 100%;
 }
 
-
+.hh{
+  color: #34243E;
+  margin-top: 80rpx;
+}

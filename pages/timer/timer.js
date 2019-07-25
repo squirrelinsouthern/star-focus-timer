@@ -1,5 +1,4 @@
 
-// pages/timer/timer.js
 Page({
 
   /**

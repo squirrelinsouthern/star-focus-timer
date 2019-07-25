@@ -1,11 +1,11 @@
-const { http } = require('../../lib/http.js')
+// const { http } = require('../../lib/http.js')
 const { formatTimeSimple } = require('../../lib/util-simple.js')
 
 Page({
   today: null,
   data: {
     show:false,
-    contentList:[],
+    contentList: [],
     index:"",
     turnOut:true,
     state: '',
@@ -14,17 +14,21 @@ Page({
     updateId: '',
     updateIndex: '',
     bh: "",
-
-
+    // ---------
+    // content:"",
+    // finished:""
   },
 
 // 初始渲染
   onShow(e){
-    http.get('/todos?completed=false').then((res)=>{
-      console.log(res.response.data.resources)
-      this.setData({ contentList: res.response.data.resources})
-    })
-    var today = formatTimeSimple (new Date())
+    let todos = wx.getStorageSync('todos') || [];   // || []精髓啊
+    
+    this.data.contentList = todos
+    // console.log(todos)
+    // console.log(this.data.contentList.length)
+    this.setData({ contentList: this.data.contentList })
+
+    let today = formatTimeSimple (new Date())
     this.setData({
       today: today
     })
@@ -36,20 +40,26 @@ Page({
     this.setData({ show: true })
   }, 
 
-  xxxConfirm(event) {
-    let content = event.detail
-    if (content) {  //最后在外层判断
-      http.post('/todos', {
-        description: content
-      })
-      .then((res) => {
-        // console.log(res)
-        let saveContent = [res.response.data.resource]
-        this.data.contentList = saveContent.concat(this.data.contentList)
-        this.setData({ contentList: this.data.contentList })
-        this.setData({ show: false })
-      })
+  xxxConfirm(e) {
+    let todos = wx.getStorageSync('todos') || [];
+
+    let content = e.detail
+    this.setData({ content: this.data.content })
+    let todo = {
+      content: content,
+      finished: false,
     }
+    // console.log(todo)
+    todos.push(todo);
+    wx.setStorageSync('todos', todos);
+    
+
+    
+
+    this.data.contentList = this.data.contentList.concat(todo)
+    console.log(this.data.contentList)
+    this.setData({ contentList: this.data.contentList })
+    this.setData({ show: false })
   },
 
   zzzCancel() {
@@ -90,7 +100,6 @@ Page({
   },
 
   againConfirm(event){
-    console.log(event)
     let content = event.detail  //吃什么
     if (content){
       http.put(`/todos/${this.updateId}`, {
@@ -98,7 +107,6 @@ Page({
         description: content
     })
       .then((res) => {
-        console.log(res)
         let newObj = res.response.data.resource
         this.data.contentList[this.updatIndex] = newObj
         this.setData({ contentList: this.data.contentList })
@@ -115,17 +123,15 @@ Page({
 
 
 helloHi(options) {
-  var that = this;
-  var timestamp = Date.parse(new Date());
+  let that = this;
+  let timestamp = Date.parse(new Date());
   timestamp = timestamp / 1000;
   // console.log("当前时间戳为：" + timestamp);
   //获取当前时间
-  var n = timestamp * 1000;
-  var date = new Date(n);
+  let n = timestamp * 1000;
+  let date = new Date(n);
   //获取时
-  var h = date.getHours();
-  console.log("现在的时间是" + h + "点")
-
+  let h = date.getHours();
   if (0 < h && h <= 6) {
     that.setData({
       bh: '晚上好!'

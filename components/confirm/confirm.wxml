@@ -1,6 +1,7 @@
 <view class="container" wx:if="{{visible}}">
+
   <view class="confirm">
-    <text class="topWord">待办详情</text>
+    <text class="topWord">闹钟任务</text>
     <textarea placeholder="{{placeholder}}" value="{{value}}" bindinput="watchValue"></textarea>
     <view class="actions">
       <view hover-class='active' class="cancel" bindtap='cancel'>取 消</view> 
@@ -8,4 +9,5 @@
     </view>
   </view>
   <view class="bgc"></view>
+  
 </view>

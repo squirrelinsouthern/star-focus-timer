@@ -1,6 +1,5 @@
 <view class="container">
 
-  <!-- todos --> 
   <!-- contentList.length -->
   <block wx:if="{{ contentList.length }}">  
    <!-- 问候  -->
@@ -11,7 +10,7 @@
     <view>
         <t-round bindtap="createNew"></t-round>
     </view>
-    <text class="top">待办列表*</text>
+    <text class="top">闹钟任务*</text>
     <view class="todoWapper">
       <!-- scroll-view  -->
       <scroll-view class="todoTable" scroll-y="true">
@@ -19,12 +18,12 @@
               data-key="{{index}}" class="item {{state==index ? 'active-tag' : '' }}"
               bindtap="addStyle">
           <!-- 1 -->
-          <icon class="checkbox" bindtap="modifyAgain" data-content='{{item.description}}'
+          <icon class="checkbox" bindtap="modifyAgain" data-content='{{item.content}}'
                 type="{{state==index ? 'success' : 'success_no_circle' }}" size="20"
                 color="#34243E" 
                 data-index="{{index}}" data-id="{{item.id}}"/>
           <!-- 2 -->
-          <text data-index="{{index}}" data-id="{{item.id}}">{{item.description}}</text>
+          <text data-index="{{index}}" data-id="{{item.id}}">{{item.content}}</text>
           <!-- 3 -->
           <view catchtap="hideTodo" class="iconDelete"
                 data-index="{{index}}" data-id="{{item.id}}">
@@ -45,11 +44,11 @@
     <view class="empty">
       <image src="../../images/todoword.png" mode="aspectFit"
              class="todoword" ></image>
-      <text class="title">创建一个TODO👍</text>
-      <text class="content">“今天也要加油！”</text>
+      <text class="title">创建一个闹钟任务</text>
+      <text class="content">“今天也要加油！👍”</text>
     </view>
     <view class="backgroundColor"></view>
-    <t-button bindtap="createNew" class="todobutton" text="创建待办" color="transparent"></t-button>
+    <t-button bindtap="createNew" class="todobutton" text="创建任务" color="transparent"></t-button>
   </block>
 
  

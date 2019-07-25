@@ -1,9 +1,9 @@
-<!--pages/timer/timer.wxml-->
 <view class="container">
   <image src="../../images/timer2.png" class="imageStyle" mode="aspectFill"></image>
   <navigator url="/pages/focus/focus"  >
-     <button class="timerButton">开始专注</button>
+     <button class="timerButton">开始计时</button>
   </navigator>
+  <view class="hh">"番茄一下"~</view>
   <image src="../../images/bgc.jpg" class="bgcStyle" mode="aspectFill"></image>
 </view>
 

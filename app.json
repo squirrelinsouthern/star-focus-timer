@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/my/my",
     "pages/todo/todo",
+    "pages/login/login",
+   
     "pages/timer/timer",
     "pages/focus/focus"
   ],
@@ -20,21 +20,15 @@
     "list": [
       {
         "pagePath": "pages/timer/timer",
-        "text": "计时",
+        "text": "闹钟计时",
         "iconPath": "images/timer.png",
         "selectedIconPath": "images/timer-active.png"
       },
       {
         "pagePath": "pages/todo/todo",
-        "text": "Todo",
+        "text": "闹钟任务",
         "iconPath": "images/todo.png",
         "selectedIconPath": "images/todo-active.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my-active.png"
       }
     ]
   },
