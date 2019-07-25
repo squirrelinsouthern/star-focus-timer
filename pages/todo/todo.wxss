@@ -63,6 +63,10 @@
   color:#34243E;
   text-align: justify;
 }
+.todoWapper .item .line{
+  text-decoration: line-through;
+  color:#34243E;
+}
 .iconDelete{
   /* border:1px solid yellow; */
   width: 40rpx;

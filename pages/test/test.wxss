@@ -1,0 +1,12 @@
+/* pages/test/test.wxss */
+view{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.yellow{
+  background-color:yellow; 
+}
+.red{
+  background-color:red; 
+}

@@ -17,16 +17,17 @@
         <view wx:for="{{contentList}}" wx:key="{{item.id}}" wx:if="{{!item.completed}}"
               data-key="{{index}}" class="item {{state==index ? 'active-tag' : '' }}"
               bindtap="addStyle">
-          <!-- 1 -->
-          <icon class="checkbox" bindtap="modifyAgain" data-content='{{item.content}}'
-                type="{{state==index ? 'success' : 'success_no_circle' }}" size="20"
-                color="#34243E" 
-                data-index="{{index}}" data-id="{{item.id}}"/>
+          <!-- 1-->
+          <!-- type="{{state==index ? 'success' : 'circle' }}"  -->
+          <icon class="checkbox" catchtap="changeStatus" 
+                type="success"  size="20"
+                color="#34243E" data-content='{{item.content}}'
+                data-index="{{index}}"/>
           <!-- 2 -->
-          <text data-index="{{index}}" data-id="{{item.id}}">{{item.content}}</text>
+          <text data-index="{{index}}">{{item.content}}</text>
           <!-- 3 -->
-          <view catchtap="hideTodo" class="iconDelete"
-                data-index="{{index}}" data-id="{{item.id}}">
+          <view catchtap="delTodo" class="iconDelete"
+                data-index="{{index}}">
             <icon type="cancel" size="20" color="#34243E"
                   data-key="{{index}}" class="{{state==index?'yes':'no'}}"/>
           </view>
@@ -51,10 +52,6 @@
     <t-button bindtap="createNew" class="todobutton" text="创建任务" color="transparent"></t-button>
   </block>
 
- 
-  <!-- 弹框 -->
-  <t-confirm class="confirm" value="{{updateContent}}" visible="{{showModify}}" 
-             bindonconfirm="againConfirm" bindoncancel="againCancel"></t-confirm>
 <!-- show -->
   <t-confirm class="confirm" placeholder="在此输入内容" visible="{{show}}"
              bindonconfirm="xxxConfirm" bindoncancel="zzzCancel"></t-confirm>

@@ -14,18 +14,13 @@ Page({
     updateId: '',
     updateIndex: '',
     bh: "",
-    // ---------
-    // content:"",
-    // finished:""
+    content:""
   },
 
 // 初始渲染
   onShow(e){
     let todos = wx.getStorageSync('todos') || [];   // || []精髓啊
-    
-    this.data.contentList = todos
-    // console.log(todos)
-    // console.log(this.data.contentList.length)
+    this.data.contentList = todos //前后端关联起来
     this.setData({ contentList: this.data.contentList })
 
     let today = formatTimeSimple (new Date())
@@ -53,11 +48,8 @@ Page({
     todos.push(todo);
     wx.setStorageSync('todos', todos);
     
-
-    
-
     this.data.contentList = this.data.contentList.concat(todo)
-    console.log(this.data.contentList)
+    // console.log(this.data.contentList)
     this.setData({ contentList: this.data.contentList })
     this.setData({ show: false })
   },
@@ -67,59 +59,40 @@ Page({
   },
 
 
-// 隐藏一行列表
-  hideTodo(e) {
+// 删除列表
+  delTodo(e) {
     let current = e.currentTarget.dataset.index //0
-    let id = e.currentTarget.dataset.id         //4201 
-    http.put(`/todos/${id}`, { completed: true })
-      .then((res) => {
-        // console.log(res)
-        let statusTodo = res.response.data.resource
-        this.data.contentList[current] = statusTodo
-        this.setData({ contentList: this.data.contentList })
-      })    
-    // this.data.contentList[current].completed = true
-    // let newDelList = this.data.contentList.splice(current,1)
-    // this.setData({ contentList: this.data.contentList})
+    let todos = wx.getStorageSync('todos') || []
+    let remove = todos.splice(current, 1)[0]
+    wx.setStorageSync('todos', todos)
+    let delcontent = this.data.contentList.splice(current, 1)[0]
+    this.setData({
+      contentList: this.data.contentList
+    });
   },
 
-// 给列表添加样式
+
+// 给item添加class
   addStyle(e){
     this.setData({
-      state: e.currentTarget.dataset.key
+      state: e.currentTarget.dataset.key  //{ key: 1 }
     })
   },
 
 
-// 修改文字内容 3操作
-  modifyAgain(e){
-    let { content, id, index } = e.currentTarget.dataset
-    this.updateId = id
-    this.updatIndex = index
-    this.setData({ showModify: true, updateContent: content })
-  },
-
-  againConfirm(event){
-    let content = event.detail  //吃什么
-    if (content){
-      http.put(`/todos/${this.updateId}`, {
-        completed: false,
-        description: content
+// 改为完成class ,finished:true
+  changeStatus(e){
+    let current = e.currentTarget.dataset.index
+    let todos = wx.getStorageSync('todos') || []
+    let todo = todos[current]
+    this.setData({
+      contentList: this.data.contentList,
     })
-      .then((res) => {
-        let newObj = res.response.data.resource
-        this.data.contentList[this.updatIndex] = newObj
-        this.setData({ contentList: this.data.contentList })
-        this.setData({ showModify: false })
-      })
-    }
-    
+    todo.finished = !todo.finished
+    wx.setStorageSync('todos', todos)
   },
 
-  againCancel(){
-    this.setData({ showModify: false })
-  },
-  
+
 
 
 helloHi(options) {
