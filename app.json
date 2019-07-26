@@ -1,8 +1,8 @@
 {
   "pages": [
+      "pages/timer/timer",
+    "pages/instruction/instruction",
     "pages/login/login",
-    "pages/todo/todo",
-    "pages/timer/timer",
     "pages/focus/focus"
   ],
   "window": {
@@ -24,8 +24,8 @@
         "selectedIconPath": "images/timer-active.png"
       },
       {
-        "pagePath": "pages/todo/todo",
-        "text": "闹钟任务",
+        "pagePath": "pages/instruction/instruction",
+        "text": "了解一下",
         "iconPath": "images/todo.png",
         "selectedIconPath": "images/todo-active.png"
       }

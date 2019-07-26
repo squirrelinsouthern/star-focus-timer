@@ -1,0 +1,62 @@
+.todoword{
+
+  width: 100%;
+  margin-top: 40rpx;
+  margin-bottom: -120rpx;
+}
+.todoword>image{
+  width: 100%;
+}
+
+/* 鼓励的话 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -240rpx;
+  width: 100%;
+}
+.empty .artical{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.empty .title {
+  font-size: 48rpx;
+  margin:20rpx 0 4rpx 0;
+  color: rgb(255, 255, 255);
+  letter-spacing:4rpx;
+  font-weight: 600;
+}
+
+.empty .dbtitle {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #DDD;
+  text-align: center;
+  letter-spacing:4rpx;
+}
+.empty .content {
+  margin-top: 32rpx;
+  line-height: 1.8;
+  padding: 0 80rpx;
+  font-size: 32rpx;
+  color: #DDD;
+  text-align: justify;
+}
+
+.container{
+  height:100vh;
+  width: 100vw;
+}
+.backgroundColor{
+  position: fixed;
+  z-index: -99;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-color: #34243E;
+}
+

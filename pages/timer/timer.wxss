@@ -1,8 +1,8 @@
 /* pages/timer/timer.wxss */
-
+ 
 .imageStyle{
-  margin-top: -80rpx;
-  margin-bottom: 40rpx;
+  margin-top: 100rpx;
+  margin-bottom: 60rpx;
 }
 .timerButton{
   border: 1rpx solid #34243E;
@@ -27,4 +27,30 @@
 .hh{
   color: #34243E;
   margin-top: 80rpx;
+}
+
+
+/* 问候 */ 
+.topText{
+  position: absolute;
+  top:20rpx;
+  left:40rpx;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.topText .hello{
+  font-size: 56rpx;
+  font-weight: 600;
+}
+.topText .today{
+  font-size: 32rpx;
+}
+
+button::after{
+  border: none;
+}
+.button-hover {
+  opacity: 0.8 !important;
 }

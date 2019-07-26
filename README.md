@@ -2,7 +2,9 @@
 
 ### 分支说明
 #### wxforComplete：为有server端
-#### master：为本地存储
+#### wxforLocal：为本地存储
+#### wxforSimple：响应腾讯小程序号召，只剩了个闹钟功能
+#### master
 
 ### 一大主题：太空星球
 

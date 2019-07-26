@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="empty">
+    <view class="todoword">
+      <image src="../../images/todoword.png" mode="aspectFit"></image>
+    </view>
+    <view class="artical">
+      <view class="title">“25分钟只做一件事”</view>
+      <view class="dbtitle">番茄工作法</view>
+      <view class="content">
+        什么是番茄闹钟？由弗朗西斯科·西里洛于1992年创立的一种相对于GTD更微观的时间管理方法。
+      </view>
+      <view class="content">
+        什么是番茄工作法？简单说，就是列出你当天要做的事，设置25分钟闹钟，然后从第一件事开始。此外还要有每日回顾、做每日承诺、控制中断、预估花费时间等。
+      </view>
+    </view>
+    
+  </view>
+
+  <view class="backgroundColor"></view>
+</view>

@@ -1,9 +1,14 @@
-<view class="container">
+<view class="container"> 
+  <!-- 问候  -->
+  <view class="topText">
+    <view class="hello">{{bh}}</view>
+    <view class="today">{{today}}</view>
+  </view>
   <image src="../../images/timer2.png" class="imageStyle" mode="aspectFill"></image>
   <navigator url="/pages/focus/focus"  >
      <button class="timerButton">开始计时</button>
   </navigator>
-  <view class="hh">"番茄工作法~了解一下"</view>
-  <image src="../../images/bgc.jpg" class="bgcStyle" mode="aspectFill"></image>
+  
+  <image src="../../images/bgc3.jpg" class="bgcStyle" mode="aspectFill"></image>
 </view>
 
