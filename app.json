@@ -1,9 +1,7 @@
 {
   "pages": [
-  
-    "pages/todo/todo",
     "pages/login/login",
-    "pages/test/test",
+    "pages/todo/todo",
     "pages/timer/timer",
     "pages/focus/focus"
   ],

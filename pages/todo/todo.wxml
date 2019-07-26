@@ -32,8 +32,10 @@
                   data-key="{{index}}" class="{{state==index?'yes':'no'}}"/>
           </view>
         </view>     
+       
       </scroll-view>
-
+      <view>⚠️该记录为本地储存，清空缓存后，</view>
+      <view>内容会消失，请谨慎清理！</view>
       <!-- 背景 -->
       <image src="../../images/bgc3.jpg" class="imageStyle" mode="aspectFill"></image>
     </view>

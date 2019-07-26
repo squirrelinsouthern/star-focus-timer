@@ -3,7 +3,7 @@
   <navigator url="/pages/focus/focus"  >
      <button class="timerButton">开始计时</button>
   </navigator>
-  <view class="hh">"番茄一下"~</view>
+  <view class="hh">"番茄工作法~了解一下"</view>
   <image src="../../images/bgc.jpg" class="bgcStyle" mode="aspectFill"></image>
 </view>
 

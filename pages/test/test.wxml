@@ -1,8 +1,0 @@
-
-<view class="{{ finish ? 'yellow' : 'red' }}" bindtap="changeColor"></view>
-<button >changeColor</button>
-
-<view class="{{ condition ? 'red': 'yellow' }}" style='height:100rpx'></view>
-<button bindtap="changeColor2">change color</button>
-
-
